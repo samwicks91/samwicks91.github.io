@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FFVIII Enemy Level Calculator</title>
+</head>
+<body>
+<h1>FFVIII Enemy Level Calculator</h1>
+<form name="form1">
+1st Character <input type="number" id="num1">
+<br>
+<br>
+</form>
+<button onclick="calculate()"> Calculate </button>
+ 
+<h4 id="answer1"><h4><h4 id="answer2"><h4> 
+ 
+   <script>
+   
+   function calculate()
+   {
+		var field1=document.getElementById("num1").value;		
+        var diff=Math.floor(field1/5)
+        var low=parseFloat(field1) - parseFloat(diff)
+        var high=parseFloat(field1) + parseFloat(diff)
+        
+        document.getElementById("answer1").innerHTML="Minimum enemy level is " +low;
+        document.getElementById("answer2").innerHTML="Maximum enemy level is " +high;
+   } 
+   
+   </script>
+</body>
+</html>
