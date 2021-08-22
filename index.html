@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>samwicks91.github.io</title>
+<title>FFVIII Enemy Level Calculator</title>
 </head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+<form name="form3">
+1st Character <input type="number" id="num1">
+<br>
+<br>
+2nd Character <input type="number" id="num2">
+<br>
+<br>
+3rd Character <input type="number" id="num3">
+<br>
+<br>
+</form>
+<button onclick="calculate()"> Calculate </button>
+ 
+<h4 id="answer1"><h4><h4 id="answer2"><h4> 
+ 
+   <script>
+   
+   function calculate()
+   {
+		var field1=document.getElementById("num1").value;
+		var field2=document.getElementById("num2").value;
+   		var field3=document.getElementById("num3").value;
+		
+		var result=parseFloat(field1) + parseFloat(field2) + parseFloat(field3);
+		
+        var mean=parseFloat(result) / 3;
+        var base=Math.floor(mean);
+        var diff=Math.floor(base/5)
+        var low=parseFloat(base) - parseFloat(diff)
+        var high=parseFloat(base) + parseFloat(diff)
+        
+        document.getElementById("answer1").innerHTML="Minimum enemy level is " +low;
+        document.getElementById("answer2").innerHTML="Maximum enemy level is " +high;
+   } 
+   
+   </script>
 </body>
 </html>
