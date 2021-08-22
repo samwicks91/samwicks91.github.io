@@ -1,10 +1,96 @@
 <!DOCTYPE html>
-<html>
-<head>
+
+<html lang="en-GB" dir="ltr">
+<head profile="http://www.w3.org/2005/10/profile">
+<meta charset='utf-8'>
+<meta name="description" content="FFVIII Enemy Level Calculator">
+<meta name="author" content="Samuel Wicks">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FFVIII Enemy Level Calculator</title>
+<style type="text/css">
+	body {
+		background-color: #3f4666;
+		font-family: Calibri, Arial, FreeSans, san-serif;
+		color: #ffffff;
+	}
+	#right_column {
+		float: right;
+		margin: 0 auto;
+		margin-top: 10px;
+		margin-right: 10px;
+		width: 250px;
+		font-size: 0.8em;
+	}
+	#container {
+		margin: 0 auto;
+		width: 730px;
+		overflow: auto;
+	}
+	#notice {
+		border:4px solid #ffa520;
+		color:#ffffff;
+		padding:1em;
+		width:94%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	table.reference
+	{
+	color: #000030;
+	background-color:#ffffff;
+	border:1px solid #c3c3c3;
+	border-collapse:collapse;
+	width:100%;
+	}
+	table.reference th
+	{
+	background-color:#e5eecc;
+	border:1px solid #c3c3c3;
+	padding:3px;
+	vertical-align:top;
+	}
+	table.reference td
+	{
+	border:1px solid #c3c3c3;
+	padding:3px;
+	vertical-align:top;
+	}
+	h1 { font-size: 3.8em; color: #c0ddcc; margin-bottom: 3px; margin-top: 10px;}
+	h1 .small { font-size: 0.4em; }
+	h1 a { text-decoration: none }
+	h2 { padding: 12px; font-size: 1.5em; color: #c0baaa; line-height: 1.3em; border: 2px solid #706a6a;}
+	h3 { text-align: center; color: #c0ddcc; }
+	a { color: #c0dddd; }
+	.tagline { font-size: 1.6em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+	.download { float: right; }
+	pre { background: #000; color: #fff; padding: 15px;}
+	code { display:inline-block; padding:3px 3px 4px 1px; color:#ececec; font-family:monospace, monospace; line-height:10px; font-size:16px; vertical-align:middle; }
+	hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+	.footer { font-size: 0.9em; text-align:center; padding-top:30px; font-style: italic; }
+	.treeView{ -moz-user-select:none; position:relative; }
+	.treeView ul{ margin:0 0 0 -1.5em; padding:0 0 0 1.5em; }
+	.treeView li{ margin:0; padding:0; list-style-position:inside; list-style-image:none; cursor:auto; }
+	.treeView li li{ padding-left:1.5em; }
+	@media screen and (max-width: 1002px) {
+	  .hide_on_small_screens {
+	    display:none;
+	  }
+	}
+</style>
 </head>
+
 <body>
-<h1>FFVIII Enemy Level Calculator</h1>
+<div id="right_column">
+</div>
+<div id="container">
+	<hr style="width:728px;">
+	<h1>FFVIII Enemy Level Calculator</h1>
+	<div class="tagline">
+		Calculate the minimum and maximum level of enemies	</div>
+				<head>
+<title>FFVIII Enemy Level Calculator</title>
+
 <form name="form3">
 1st Character <input type="number" id="num1">
 <br>
@@ -45,6 +131,10 @@
 <i>If you have a party of two (even including a KO'd character), <a href="https://samwicks91.github.io/LVcalc2.html">please click here.</a></i>
 <br>
 <i>If you have only a single character, <a href="https://samwicks91.github.io/LVcalc1.html">please click here.</a></i>
-   
+
+		<div class="footer"><table align="center" dir="ltr" cellspacing="0" cellpadding="0" border="0"><tr>
+			<td>2021&nbsp;</td><td>Samuel&nbsp;Wicks</a></td></tr></table>
+			Hosting by <a target="_blank" href="https://pages.github.com/">GitHub</a>
+	</div>
 </body>
 </html>
