@@ -1,140 +1,293 @@
 <!DOCTYPE html>
 
-<html lang="en-GB" dir="ltr">
-<head profile="http://www.w3.org/2005/10/profile">
-<meta charset='utf-8'>
-<meta name="description" content="FFVIII Enemy Level Calculator">
-<meta name="author" content="Samuel Wicks">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FFVIII Enemy Level Calculator</title>
-<style type="text/css">
-	body {
-		background-color: #3f4666;
-		font-family: Calibri, Arial, FreeSans, san-serif;
-		color: #ffffff;
-	}
-	#right_column {
-		float: right;
-		margin: 0 auto;
-		margin-top: 10px;
-		margin-right: 10px;
-		width: 250px;
-		font-size: 0.8em;
-	}
-	#container {
-		margin: 0 auto;
-		width: 730px;
-		overflow: auto;
-	}
-	#notice {
-		border:4px solid #ffa520;
-		color:#ffffff;
-		padding:1em;
-		width:94%;
-		margin-left:auto;
-		margin-right:auto;
-	}
-	table.reference
-	{
-	color: #000030;
-	background-color:#ffffff;
-	border:1px solid #c3c3c3;
-	border-collapse:collapse;
-	width:100%;
-	}
-	table.reference th
-	{
-	background-color:#e5eecc;
-	border:1px solid #c3c3c3;
-	padding:3px;
-	vertical-align:top;
-	}
-	table.reference td
-	{
-	border:1px solid #c3c3c3;
-	padding:3px;
-	vertical-align:top;
-	}
-	h1 { font-size: 3.8em; color: #c0ddcc; margin-bottom: 3px; margin-top: 10px;}
-	h1 .small { font-size: 0.4em; }
-	h1 a { text-decoration: none }
-	h2 { padding: 12px; font-size: 1.5em; color: #c0baaa; line-height: 1.3em; border: 2px solid #706a6a;}
-	h3 { text-align: center; color: #c0ddcc; }
-	a { color: #c0dddd; }
-	.tagline { font-size: 1.6em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-	.download { float: right; }
-	pre { background: #000; color: #fff; padding: 15px;}
-	code { display:inline-block; padding:3px 3px 4px 1px; color:#ececec; font-family:monospace, monospace; line-height:10px; font-size:16px; vertical-align:middle; }
-	hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+<div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+	<img class="image" src="H:\Appsense\Redirected\Pictures\drillmtw.png" draggable="false"  />
+	<img class="image" src="H:\Appsense\Redirected\Pictures\omnicellfridge.jpg" draggable="false" />
+	<img class="image" src="H:\Appsense\Redirected\Pictures\BWBTK33.jpg" draggable="false" />
+	<img class="image" src="H:\Appsense\Redirected\Pictures\London.PNG" draggable="false" />
+	<img class="image" src="H:\Appsense\Redirected\Pictures\!.PNG" draggable="false" />
+	<img class="image" src="H:\Appsense\Redirected\Pictures\euna.PNG" draggable="false" />
+</div>
 
-	.footer { font-size: 0.9em; text-align:center; padding-top:30px; font-style: italic; }
-	.treeView{ -moz-user-select:none; position:relative; }
-	.treeView ul{ margin:0 0 0 -1.5em; padding:0 0 0 1.5em; }
-	.treeView li{ margin:0; padding:0; list-style-position:inside; list-style-image:none; cursor:auto; }
-	.treeView li li{ padding-left:1.5em; }
-	@media screen and (max-width: 1002px) {
-	  .hide_on_small_screens {
-	    display:none;
-	  }
-	}
+<style type="text/css">
+body {
+	height: 100vh;
+	width: 100vw;
+	background-color: black;
+	margin: 0rem;
+	overflow: hidden;
+}
+</style>
+
+<style type="text/css">
+#image-track {
+	display: flex;
+	gap: 4vmin;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+  transform: translate(0%, -50%); 
+  user-select: none;
+}
+</style>
+
+<style type="text/css">
+#image-track > .image {
+	width: 40vmin;
+	height: 56vmin;
+	object-fit: cover;
+	object-position: 100% center;
+}
+</style>
+
+<script>
+const track = document.getElementById("image-track");
+
+const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
+
+const handleOnUp = () => {
+  track.dataset.mouseDownAt = "0";
+  track.dataset.prevPercentage = track.dataset.percentage;
+};
+
+const handleOnMove = (e) => {
+  if (track.dataset.mouseDownAt === "0") return;
+
+  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+    maxDelta = window.innerWidth / 2;
+
+  const percentage = (mouseDelta / maxDelta) * -100,
+    nextPercentageUnconstrained =
+      parseFloat(track.dataset.prevPercentage) + percentage,
+    nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+
+  track.dataset.percentage = nextPercentage;
+
+  track.animate(
+    {
+      transform: `translate(${nextPercentage}%, -50%)`
+    },
+    { duration: 1200, fill: "forwards" }
+  );
+
+  for (const image of track.getElementsByClassName("image")) {
+    image.animate(
+      {
+        objectPosition: `${100 + nextPercentage}% center`
+      },
+      { duration: 1200, fill: "forwards" }
+    );
+  }
+};
+
+/* -- Had to add extra lines for touch events -- */
+
+window.onmousedown = (e) => handleOnDown(e);
+
+window.ontouchstart = (e) => handleOnDown(e.touches[0]);
+
+window.onmouseup = (e) => handleOnUp(e);
+
+window.ontouchend = (e) => handleOnUp(e.touches[0]);
+
+window.onmousemove = (e) => handleOnMove(e);
+
+window.ontouchmove = (e) => handleOnMove(e.touches[0]);
+
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Gill Sans", sans-serif;
+}
+
+.menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.menu a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #f1f1f1;
+}
+
+.menu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+
+}
 </style>
 </head>
-
 <body>
-<div id="right_column">
+
+<div id="myMenu" class="menu">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div id="menu">
+  <div id="menu-items">
+	<a href="https://wamsicks.uk"><div class="menu-item">Home</div></a>
+    <div class="menu-item">About</div>
+    <div class="menu-item">Portfolio</div>
+    <div class="menu-item">Plans</div>
+		<style scoped>
+body {
+  background-color: rgb(20, 20, 20);
+  margin: 0px;
+}
+#menu {  
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+#menu-items {
+  margin-left: clamp(4rem, 20vw, 48rem);
+  position: relative;
+  z-index: 2;
+}
+
+#menu[data-active-index="0"] > #menu-background-pattern {
+  background-position: 0% -25%;
+}
+
+#menu[data-active-index="1"] > #menu-background-pattern {
+  background-position: 0% -50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-pattern {
+  background-position: 0% -75%;
+}
+
+#menu[data-active-index="3"] > #menu-background-pattern {
+  background-position: 0% -100%;
+}
+
+#menu[data-active-index="0"] > #menu-background-image {
+  background-position: center 45%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image {
+  background-position: center 50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image {
+  background-position: center 55%;
+}
+
+#menu[data-active-index="3"] > #menu-background-image {
+  background-position: center 60%;
+}
+
+#menu-background-pattern {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 9%, 
+    transparent 9%
+  );
+  background-position: 0% 0%;
+  background-size: 12vmin 12vmin;
+  height: 100vh;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  transition: opacity 800ms ease, 
+    background-size 800ms ease,
+    background-position 800ms ease;
+  width: 100vw;
+  z-index: 1;
+}
+
+#menu-background-image {
+  background-image: "./drillmtw.png";
+  background-position: center 40%;
+  background-size: 110vmax;
+  height: 100%;
+  left: 0px;  
+  opacity: 0.15;
+  position: absolute;
+  top: 0px;
+  transition: opacity 800ms ease,
+    background-size 800ms ease,
+    background-position 800ms ease;
+  width: 100%;
+  z-index: 0;
+}
+
+#menu-items:hover ~ #menu-background-pattern {
+  background-size: 11vmin 11vmin;
+  opacity: 0.5;
+}
+
+#menu-items:hover ~ #menu-background-image {
+  background-size: 100vmax;
+  opacity: 0.1;
+}
+
+#menu-items:hover > .menu-item {
+  opacity: 0.3;
+}
+
+#menu-items:hover > .menu-item:hover {
+  opacity: 1; 
+}
+
+.menu-item {
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: 'Gill Sans', sans-serif;
+  font-size: clamp(3rem, 8vw, 8rem);
+  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+  text-decoration: none;
+  transition: opacity 400ms ease;
+}
+</style>
+  </div>
+
+<script>
+const menu = document.getElementById("menu");
+
+Array.from(document.getElementsByClassName("menu-item"))
+  .forEach((item, index) => {
+    item.onmouseover = () => {
+      menu.dataset.activeIndex = index;
+    }
+  });
+</script>
+
 </div>
-<div id="container">
-	<hr style="width:728px;">
-	<h1>FFVIII Enemy Level Calculator</h1>
-	<div class="tagline">
-		Calculate the minimum and maximum level of enemies	</div>
-				<head>
-<title>FFVIII Enemy Level Calculator</title>
+</div>
 
-<form name="form3">
-1st Character <input type="number" id="num1">
-<br>
-<br>
-2nd Character <input type="number" id="num2">
-<br>
-<br>
-3rd Character <input type="number" id="num3">
-<br>
-<br>
-</form>
-<button onclick="calculate()"> Calculate </button>
- 
-<h4 id="answer1"><h4><h4 id="answer2"><h4> 
- 
-   <script>
-   
-   function calculate()
-   {
-		var field1=document.getElementById("num1").value;
-		var field2=document.getElementById("num2").value;
-   		var field3=document.getElementById("num3").value;
-		
-		var result=parseFloat(field1) + parseFloat(field2) + parseFloat(field3);
-		
-        var mean=parseFloat(result) / 3;
-        var base=Math.floor(mean);
-        var diff=Math.floor(base/5)
-        var low=parseFloat(base) - parseFloat(diff)
-        var high=parseFloat(base) + parseFloat(diff)
-        
-        document.getElementById("answer1").innerHTML="Minimum enemy level is " +low;
-        document.getElementById("answer2").innerHTML="Maximum enemy level is " +high;
-   } 
-   
-   </script>
-   
-<i>If you have a party of two (even including a KO'd character), <a href="https://samwicks91.github.io/LVcalc2.html">please click here.</a></i>
-<br>
-<i>If you have only a single character, <a href="https://samwicks91.github.io/LVcalc1.html">please click here.</a></i>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
 
-		<div class="footer"><table align="center" dir="ltr" cellspacing="0" cellpadding="0" border="0"><tr>
-			<td>2021-2022&nbsp;</td><td>Samuel&nbsp;Wicks</a></td></tr></table>
-			Hosting by <a target="_blank" href="https://pages.github.com/">GitHub</a>
-	</div>
+<script>
+function openNav() {
+  document.getElementById("myMenu").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myMenu").style.width = "0";
+}
+</script>
+   
 </body>
-</html>
+</html> 
