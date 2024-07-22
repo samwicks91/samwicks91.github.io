@@ -8,7 +8,7 @@
         body {
             height: 100vh;
             width: 100vw;
-            background-color: #151515;
+            background-color: black;
             margin: 0;
             overflow: hidden;
             font-family: "Gill Sans", sans-serif;
@@ -32,7 +32,7 @@
             height: 100%;
             width: 0;
             position: fixed;
-            z-index: 1;
+            z-index: 10; /* Ensure the menu has a higher z-index */
             top: 0;
             left: 0;
             background-color: #111;
@@ -53,10 +53,11 @@
         }
         .menu .closebtn {
             position: absolute;
-            top: 0;
+            top: 20px; /* Adjusted position to be within the menu */
             right: 25px;
             font-size: 36px;
-            margin-left: 50px;
+            z-index: 11; /* Ensure the close button is above the menu */
+            cursor: pointer;
         }
         #menu {  
             align-items: center;
