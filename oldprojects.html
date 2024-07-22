@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wamsicks Previous Projects</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: #151515;
+            margin: 0;
+            overflow: hidden;
+            font-family: "Gill Sans", sans-serif;
+        }
+        #image-track {
+            display: flex;
+            gap: 4vmin;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            user-select: none;
+        }
+        #image-track > .image {
+            width: 40vmin;
+            height: 56vmin;
+            object-fit: cover;
+            object-position: 100% center;
+        }
+        .menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 0;
+        }
+        .menu a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .menu a:hover {
+            color: #f1f1f1;
+        }
+        .menu .closebtn {
+            position: absolute;
+            top: 20px; 
+            right: 25px;
+            font-size: 36px;
+            z-index: 11; 
+            cursor: pointer;
+        }
+        #menu {  
+            align-items: center;
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+        #menu-items {
+            margin-left: clamp(4rem, 20vw, 48rem);
+            position: relative;
+            z-index: 2;
+        }
+        #menu-background-pattern, #menu-background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            transition: opacity 800ms ease, background-size 800ms ease, background-position 800ms ease;
+            z-index: 0;
+        }
+        #menu-background-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 9%, transparent 9%);
+            background-size: 12vmin 12vmin;
+        }
+        #menu-background-image {
+            background-image: url("./bkg.png");
+            background-position: center 40%;
+            background-size: 110vmax;
+            opacity: 0.15;
+        }
+        #menu-items:hover ~ #menu-background-pattern {
+            background-size: 11vmin 11vmin;
+            opacity: 0.5;
+        }
+        #menu-items:hover ~ #menu-background-image {
+            background-size: 100vmax;
+            opacity: 0.1;
+        }
+        .menu-item {
+            color: white;
+            cursor: pointer;
+            display: block;
+            font-size: clamp(3rem, 8vw, 8rem);
+            padding: clamp(0.25rem, 0.5vw, 1rem) 0;
+            text-decoration: none;
+            transition: opacity 400ms ease;
+        }
+        #menu-items:hover > .menu-item {
+            opacity: 0.3;
+        }
+        #menu-items:hover > .menu-item:hover {
+            opacity: 1;
+        }
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white; 
+		}	
+		#right_column {
+			float: right;
+			margin: 0 auto;
+			margin-top: 10px;
+			margin-right: 10px;
+			width: 250px;
+			font-size: 0.8em;
+		}
+		#container {
+			margin: 0 auto;
+			width: 730px;
+			overflow: auto;
+        }
+		h1 { font-size: 3em; color: #ffffff; margin-bottom: 3px; margin-top: 10px; }
+		h1 .small { font-size: 0.4em; }
+		h1 a { text-decoration: none }
+		h3 { color: #ffffff; }
+		
+    </style>
+	 <span class="menu-icon" onclick="openNav()">&#9776;</span>
+</head>
+<body>
+    
+<div id="right_column"></div>
+<div id="container">
+    <hr style="width: 728px;">
+    <h1>FFVIII Enemy Level Calculator</h1>
+    <h3>Calculate the minimum and maximum level of Final Fantasy VIII enemies.</h3>
+	<h3>Use this when you need to work out what magic might be available to you.</h3>
+	
+    <div id="myMenu" class="menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="menu">
+            <ul id="menu-items">
+                <li class="menu-item"><a href="https://www.wamsicks.uk">Home</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/about.html">About</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/blog.html">Blog</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/oldprojects.html">Old Projects</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/contact.html">Contact Me</a></li>
+            </ul>
+            <div id="menu-background-pattern"></div>
+            <div id="menu-background-image"></div>
+        </div>
+    </div>
+
+    <script>
+        const menu = document.getElementById("menu");
+
+        Array.from(document.getElementsByClassName("menu-item")).forEach((item, index) => {
+            item.onmouseover = () => {
+                menu.dataset.activeIndex = index;
+            };
+        });
+
+        function openNav() {
+            document.getElementById("myMenu").style.width = "50%";
+        }
+
+        function closeNav() {
+            document.getElementById("myMenu").style.width = "0";
+        }
+    </script>
+</body>
+</html>
