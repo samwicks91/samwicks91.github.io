@@ -112,6 +112,11 @@
         #menu-items:hover > .menu-item:hover {
             opacity: 1;
         }
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white; /* Change this to the desired color */
+        }
     </style>
 </head>
 <body>
@@ -139,7 +144,7 @@
         </div>
     </div>
 
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <span class="menu-icon" onclick="openNav()">&#9776;</span>
 
     <script>
         const track = document.getElementById("image-track");
