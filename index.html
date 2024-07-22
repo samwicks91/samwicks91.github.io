@@ -1,295 +1,204 @@
 <!DOCTYPE html>
-
-<div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-	<img class="image" src="https://samwicks91.github.io/image1.jpg" draggable="false"  />
-	<img class="image" src="https://samwicks91.github.io/image2.jpg" draggable="false" />
-	<img class="image" src="https://samwicks91.github.io/image3.jpg" draggable="false" />
-	<img class="image" src="https://samwicks91.github.io/image4.jpg" draggable="false" />
-	<img class="image" src="https://samwicks91.github.io/image5.jpg" draggable="false" />
-	<img class="image" src="https://samwicks91.github.io/image6.jpg" draggable="false" />
-</div>
-
-<style type="text/css">
-body {
-	height: 100vh;
-	width: 100vw;
-	background-color: black;
-	margin: 0rem;
-	overflow: hidden;
-}
-</style>
-
-<style type="text/css">
-#image-track {
-	display: flex;
-	gap: 4vmin;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-  transform: translate(0%, -50%); 
-  user-select: none;
-}
-</style>
-
-<style type="text/css">
-#image-track > .image {
-	width: 40vmin;
-	height: 56vmin;
-	object-fit: cover;
-	object-position: 100% center;
-}
-</style>
-
-<script>
-const track = document.getElementById("image-track");
-
-const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
-
-const handleOnUp = () => {
-  track.dataset.mouseDownAt = "0";
-  track.dataset.prevPercentage = track.dataset.percentage;
-};
-
-const handleOnMove = (e) => {
-  if (track.dataset.mouseDownAt === "0") return;
-
-  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-    maxDelta = window.innerWidth / 2;
-
-  const percentage = (mouseDelta / maxDelta) * -100,
-    nextPercentageUnconstrained =
-      parseFloat(track.dataset.prevPercentage) + percentage,
-    nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-
-  track.dataset.percentage = nextPercentage;
-
-  track.animate(
-    {
-      transform: `translate(${nextPercentage}%, -50%)`
-    },
-    { duration: 1200, fill: "forwards" }
-  );
-
-  for (const image of track.getElementsByClassName("image")) {
-    image.animate(
-      {
-        objectPosition: `${100 + nextPercentage}% center`
-      },
-      { duration: 1200, fill: "forwards" }
-    );
-  }
-};
-
-/* -- Had to add extra lines for touch events -- */
-
-window.onmousedown = (e) => handleOnDown(e);
-
-window.ontouchstart = (e) => handleOnDown(e.touches[0]);
-
-window.onmouseup = (e) => handleOnUp(e);
-
-window.ontouchend = (e) => handleOnUp(e.touches[0]);
-
-window.onmousemove = (e) => handleOnMove(e);
-
-window.ontouchmove = (e) => handleOnMove(e.touches[0]);
-
-</script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: "Gill Sans", sans-serif;
-}
-
-.menu {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 0px;
-}
-
-.menu a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.menu a:hover {
-  color: #f1f1f1;
-}
-
-.menu .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-
-}
-</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved Webpage</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: #151515;
+            margin: 0;
+            overflow: hidden;
+            font-family: "Gill Sans", sans-serif;
+        }
+        #image-track {
+            display: flex;
+            gap: 4vmin;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            user-select: none;
+        }
+        #image-track > .image {
+            width: 40vmin;
+            height: 56vmin;
+            object-fit: cover;
+            object-position: 100% center;
+        }
+        .menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 10; /* Ensure the menu has a higher z-index */
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 0;
+        }
+        .menu a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .menu a:hover {
+            color: #f1f1f1;
+        }
+        .menu .closebtn {
+            position: absolute;
+            top: 20px; /* Adjusted position to be within the menu */
+            right: 25px;
+            font-size: 36px;
+            z-index: 11; /* Ensure the close button is above the menu */
+            cursor: pointer;
+        }
+        #menu {  
+            align-items: center;
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+        #menu-items {
+            margin-left: clamp(4rem, 20vw, 48rem);
+            position: relative;
+            z-index: 2;
+        }
+        #menu-background-pattern, #menu-background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            transition: opacity 800ms ease, background-size 800ms ease, background-position 800ms ease;
+            z-index: 0;
+        }
+        #menu-background-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 9%, transparent 9%);
+            background-size: 12vmin 12vmin;
+        }
+        #menu-background-image {
+            background-image: url("./bkg.png");
+            background-position: center 40%;
+            background-size: 110vmax;
+            opacity: 0.15;
+        }
+        #menu-items:hover ~ #menu-background-pattern {
+            background-size: 11vmin 11vmin;
+            opacity: 0.5;
+        }
+        #menu-items:hover ~ #menu-background-image {
+            background-size: 100vmax;
+            opacity: 0.1;
+        }
+        .menu-item {
+            color: white;
+            cursor: pointer;
+            display: block;
+            font-size: clamp(3rem, 8vw, 8rem);
+            padding: clamp(0.25rem, 0.5vw, 1rem) 0;
+            text-decoration: none;
+            transition: opacity 400ms ease;
+        }
+        #menu-items:hover > .menu-item {
+            opacity: 0.3;
+        }
+        #menu-items:hover > .menu-item:hover {
+            opacity: 1;
+        }
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white; /* Change this to the desired color */
+        }
+    </style>
 </head>
 <body>
+    <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+        <img class="image" src="https://www.wamsicks.uk/image1.jpg" draggable="false" />
+        <img class="image" src="https://www.wamsicks.uk/image2.jpg" draggable="false" />
+        <img class="image" src="https://www.wamsicks.uk/image3.jpg" draggable="false" />
+        <img class="image" src="https://www.wamsicks.uk/image4.jpg" draggable="false" />
+        <img class="image" src="https://www.wamsicks.uk/image5.jpg" draggable="false" />
+        <img class="image" src="https://www.wamsicks.uk/image6.jpg" draggable="false" />
+    </div>
+    
+    <div id="myMenu" class="menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="menu">
+            <ul id="menu-items">
+                <li class="menu-item"><a href="https://www.wamsicks.uk">Home</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/about.html">About</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/portfolio.html">Portfolio</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/plans.html">Plans</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/contact.html">Contact Me</a></li>
+            </ul>
+            <div id="menu-background-pattern"></div>
+            <div id="menu-background-image"></div>
+        </div>
+    </div>
 
-<div id="myMenu" class="menu">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div id="menu">
-	  
-  <ul id="menu-items">
-	<li class="menu-item"><a href="https://wamsicks.uk">Home</a></li>
-    <li class="menu-item"><a href="https://wamsicks.uk/about.html">About</a></li>
-    <li class="menu-item"><a href="https://wamsicks.uk/portfolio.html">Portfolio</a></li>
-    <li class="menu-item"><a href="https://wamsicks.uk/plans.html">Plans</a></li>
-    <li class="menu-item"><a href="https://wamsicks.uk/contact.html">Contact Me</a></li>
-		<style>
-body {
-  background-color: rgb(20, 20, 20);
-  margin: 0px;
-}
-#menu {  
-  align-items: center;
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-}
+    <span class="menu-icon" onclick="openNav()">&#9776;</span>
 
-#menu-items {
-  margin-left: clamp(4rem, 20vw, 48rem);
-  position: relative;
-  z-index: 2;
-}
+    <script>
+        const track = document.getElementById("image-track");
 
-#menu[data-active-index="0"] > #menu-background-pattern {
-  background-position: 0% -25%;
-}
+        const handleOnDown = (e) => {
+            track.dataset.mouseDownAt = e.clientX;
+        };
 
-#menu[data-active-index="1"] > #menu-background-pattern {
-  background-position: 0% -50%;
-}
+        const handleOnUp = () => {
+            track.dataset.mouseDownAt = "0";
+            track.dataset.prevPercentage = track.dataset.percentage;
+        };
 
-#menu[data-active-index="2"] > #menu-background-pattern {
-  background-position: 0% -75%;
-}
+        const handleOnMove = (e) => {
+            if (track.dataset.mouseDownAt === "0") return;
 
-#menu[data-active-index="3"] > #menu-background-pattern {
-  background-position: 0% -100%;
-}
+            const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+                maxDelta = window.innerWidth / 2;
 
-#menu[data-active-index="0"] > #menu-background-image {
-  background-position: center 45%;
-}
+            const percentage = (mouseDelta / maxDelta) * -100,
+                nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+                nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
 
-#menu[data-active-index="1"] > #menu-background-image {
-  background-position: center 50%;
-}
+            track.dataset.percentage = nextPercentage;
 
-#menu[data-active-index="2"] > #menu-background-image {
-  background-position: center 55%;
-}
+            track.style.transform = `translate(${nextPercentage}%, -50%)`;
 
-#menu[data-active-index="3"] > #menu-background-image {
-  background-position: center 60%;
-}
+            for (const image of track.getElementsByClassName("image")) {
+                image.style.objectPosition = `${100 + nextPercentage}% center`;
+            }
+        };
 
-#menu-background-pattern {
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.1) 9%, 
-    transparent 9%
-  );
-  background-position: 0% 0%;
-  background-size: 12vmin 12vmin;
-  height: 100vh;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  transition: opacity 800ms ease, 
-    background-size 800ms ease,
-    background-position 800ms ease;
-  width: 100vw;
-  z-index: 1;
-}
+        window.addEventListener("mousedown", handleOnDown);
+        window.addEventListener("touchstart", (e) => handleOnDown(e.touches[0]));
+        window.addEventListener("mouseup", handleOnUp);
+        window.addEventListener("touchend", (e) => handleOnUp(e.touches[0]));
+        window.addEventListener("mousemove", handleOnMove);
+        window.addEventListener("touchmove", (e) => handleOnMove(e.touches[0]));
 
-#menu-background-image {
-  background-image: "./bkg.png";
-  background-position: center 40%;
-  background-size: 110vmax;
-  height: 100%;
-  left: 0px;  
-  opacity: 0.15;
-  position: absolute;
-  top: 0px;
-  transition: opacity 800ms ease,
-    background-size 800ms ease,
-    background-position 800ms ease;
-  width: 100%;
-  z-index: 0;
-}
+        const menu = document.getElementById("menu");
 
-#menu-items:hover ~ #menu-background-pattern {
-  background-size: 11vmin 11vmin;
-  opacity: 0.5;
-}
+        Array.from(document.getElementsByClassName("menu-item")).forEach((item, index) => {
+            item.onmouseover = () => {
+                menu.dataset.activeIndex = index;
+            };
+        });
 
-#menu-items:hover ~ #menu-background-image {
-  background-size: 100vmax;
-  opacity: 0.1;
-}
+        function openNav() {
+            document.getElementById("myMenu").style.width = "50%";
+        }
 
-#menu-items:hover > .menu-item {
-  opacity: 0.3;
-}
-
-#menu-items:hover > .menu-item:hover {
-  opacity: 1; 
-}
-
-.menu-item {
-  color: white;
-  cursor: pointer;
-  display: block;
-  font-family: 'Gill Sans', sans-serif;
-  font-size: clamp(3rem, 8vw, 8rem);
-  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
-  text-decoration: none;
-  transition: opacity 400ms ease;
-}
-</style>
-  </ul>
-
-<script>
-const menu = document.getElementById("menu");
-
-Array.from(document.getElementsByClassName("menu-item"))
-  .forEach((item, index) => {
-    item.onmouseover = () => {
-      menu.dataset.activeIndex = index;
-    }
-  });
-</script>
-
-</div>
-</div>
-
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-
-<script>
-function openNav() {
-  document.getElementById("myMenu").style.width = "100%";
-}
-
-function closeNav() {
-  document.getElementById("myMenu").style.width = "0";
-}
-</script>
-   
+        function closeNav() {
+            document.getElementById("myMenu").style.width = "0";
+        }
+    </script>
 </body>
-</html> 
+</html>
