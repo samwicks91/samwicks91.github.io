@@ -13,21 +13,6 @@
             overflow: hidden;
             font-family: "Gill Sans", sans-serif;
         }
-        #image-track {
-            display: flex;
-            gap: 4vmin;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(0%, -50%);
-            user-select: none;
-        }
-        #image-track > .image {
-            width: 40vmin;
-            height: 56vmin;
-            object-fit: cover;
-            object-position: 100% center;
-        }
         .menu {
             height: 100%;
             width: 0;
@@ -39,6 +24,7 @@
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 0;
+            font-family: "Gill Sans", sans-serif;
         }
         .menu a {
             padding: 8px 8px 8px 32px;
@@ -129,6 +115,26 @@
 			margin: 0 auto;
 			width: 730px;
 			overflow: auto;
+        }	
+		.post a {
+			text-decoration: none;
+            color: white;
+		}
+        #post-items {
+            position: relative;		
+        }		
+        .post-item {
+            display: block;
+            font-size: clamp(1rem, 3vw, 3rem);
+			margin-bottom: 3px; 
+			margin-top: 10px;
+            opacity: 400ms ease;
+        }
+        #post-items:hover > .post-item {
+            opacity: 0.3;
+        }
+        #post-items:hover > .post-item:hover {
+            opacity: 1;
         }
 		h1 { font-size: 3em; color: #ffffff; margin-bottom: 3px; margin-top: 10px; }
 		h1 .small { font-size: 0.4em; }
@@ -142,10 +148,17 @@
     
 <div id="right_column"></div>
 <div id="container">
-    <hr style="width: 728px;">
-    <h1>FFVIII Enemy Level Calculator</h1>
-    <h3>Calculate the minimum and maximum level of Final Fantasy VIII enemies.</h3>
-	<h3>Use this when you need to work out what magic might be available to you.</h3>
+    <hr style="width: 728px;">	
+    <h1>Odds and Sods</h1>
+    <h3>Below you can find some things that I used to curate but no longer spend time keeping up to date.</h3>
+	<h3>If you see anything useful or original or think that the code can be repurposed into something, use it, take it, do what you like with it.</h3>
+        <hr style="width: 728px;">	
+	<div id="myPosts" class="post">
+        <ul id="post-items">
+            <li class="post-item"><a href="https://www.wamsicks.uk/ff8lvcalc.html">FFVIII Enemy Level Calculator</a></li>
+            <li class="post-item"><a href="https://www.wamsicks.uk/blog_old.html">Old Blog Posts</a></li>
+        </ul>
+	</div>
 	
     <div id="myMenu" class="menu">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
