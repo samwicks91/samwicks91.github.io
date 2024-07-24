@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Wamsicks | Me and My Mind">
+    <meta name="author" content="Samuel Wicks">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wamsicks | Me and My Mind</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: #151515;
+            margin: 0;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            font-family: sans-serif;
+        }
+        .menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 0;
+            font-family: sans-serif;
+        }
+        .menu a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .menu a:hover {
+            color: #f1f1f1;
+        }
+        .menu .closebtn {
+            position: absolute;
+            top: 20px; 
+            right: 25px;
+            font-size: 36px;
+            z-index: 11; 
+            cursor: pointer;
+        }
+        #menu {  
+            align-items: center;
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+        #menu-items {
+            margin-left: clamp(4rem, 20vw, 48rem);
+            position: relative;
+            z-index: 2;
+        }
+        #menu-background-pattern, #menu-background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            transition: opacity 800ms ease, background-size 800ms ease, background-position 800ms ease;
+            z-index: 0;
+        }
+        #menu-background-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 9%, transparent 9%);
+            background-size: 12vmin 12vmin;
+        }
+        #menu-background-image {
+            background-image: url("./bkg.png");
+            background-position: center 40%;
+            background-size: 110vmax;
+            opacity: 0.15;
+        }
+        #menu-items:hover ~ #menu-background-pattern {
+            background-size: 11vmin 11vmin;
+            opacity: 0.5;
+        }
+        #menu-items:hover ~ #menu-background-image {
+            background-size: 100vmax;
+            opacity: 0.1;
+        }
+        .menu-item {
+            color: white;
+            cursor: pointer;
+            display: block;
+            font-size: clamp(3rem, 8vw, 8rem);
+            padding: clamp(0.25rem, 0.5vw, 1rem) 0;
+            text-decoration: none;
+            transition: opacity 400ms ease;
+        }
+        #menu-items:hover > .menu-item {
+            opacity: 0.3;
+        }
+        #menu-items:hover > .menu-item:hover {
+            opacity: 1;
+        }
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white; 
+		}	
+		#right_column {
+			float: right;
+			margin: 0 auto;
+			margin-top: 10px;
+			margin-right: 10px;
+			width: 250px;
+			font-size: 0.8em;
+		}
+		#container {
+			margin: 0 auto;
+			width: 730px;
+			overflow: auto;
+        }	
+		.post a {
+			text-decoration: none;
+            color: white;
+		}
+        #post-items {
+            position: relative;		
+        }		
+        .post-item {
+            display: block;
+            font-size: clamp(1rem, 3vw, 3rem);
+			margin-bottom: 3px; 
+			margin-top: 10px;
+            opacity: 400ms ease;
+        }
+        #post-items:hover > .post-item {
+            opacity: 0.3;
+        }
+        #post-items:hover > .post-item:hover {
+            opacity: 1;
+        }
+		h1 { font-size: 3em; color: #ffffff; margin-bottom: 3px; margin-top: 10px; }
+		h1 .small { font-size: 0.4em; }
+		h1 a { text-decoration: none }
+		h2 { color: #efe7e7; }
+        h3 { color: #efe7e7; }
+        h4 { color: #efe7e7; }
+        p { color: #ffffff; }
+    </style>
+	 <span class="menu-icon" onclick="openNav()">&#9776;</span>
+</head>
+<body>
+    
+<div id="right_column"></div>
+<div id="container">
+    <hr style="width: 728px;">	
+        <h1>Me and My Mind</h1>
+        <h3>I wonder what was on my mind that day</h3>
+        <h3>First published: 2nd March 2019</h3>
+    <hr style="width: 728px;">	
+        <p>Believe it or not, when I was a teenager, I wanted to be a psychotherapist. I was told by a few people that I would be good at it but when I made it clear to some that I had some issues in the past, they warned me off it. I persisted for a little while but eventually got bored with the way in which the British school system teaches i.e. bombarding you with studies until you’re numb, rather than instilling an understanding of the overriding principles of psychological theories. I really wanted to get into psychotherapy to get to know more about the human condition and what makes people think and act the way they do and to help them out of some of the destructive ways that they live their lives. Starting to get the personal Jesus reference in the tagline? I also had an interest because I thought that if I had the tools to help others, I could help myself. This would be a trick that I would try to pull on myself again and again, but it doesn’t work.</p>
+        <p>I think that it is a part of my personality to try and talk to people and get them to understand their own minds better. Proximity means that we cannot see the whole, so others have to act as mirrors. That doesn’t mean that we parrot back what we perceive as another person’s issue, it means listening as much as we can to the issues, context and history that we are given and making observations that may help to focus on other things that may cause these fractures. I have tried for a few months to put this into practice. Every now and then, I go to r/depression and talk to different people who have posted their experiences on there privately. Some people don’t respond, some get defensive but the majority are receptive, they really just want to be heard. That isn’t to say that I’m always a great help, most of the time I can only offer to listen. Sometimes, you can really get into a good conversation with some people and you actually feel like you have gotten somewhere.</p>
+        <p>It’s amazing what causes us to have such extreme trauma, one person I chatted with stuck with me. She was from the US and was having issues with understandings around her heritage and the way that it affected the relationships of those around her. She hadn’t been up front with many people about where she was born, telling others that it was in Latin America rather than the US. I had mentioned that I had experienced changes because of the way I felt I had to change certain things about myself as a teenager. After talking about it, we pretty much agreed that her issue was difficult in the heat of the moment but that she could ask people to forgive her later. That was all pretty unique, but what I really took from it was something she wrote: “I think we’re almost kindred spirits in that sense, then. I definitely understand how the way you talk can be a sense of shame and insecurity.”</p>
+        <p>The problem with all this is that you can only sustain this for so long before you start to lose your vitality and that is exactly what ended up happening to me. I couldn’t keep doing it for people. The conclusion that I have come to is that I cannot do this for others whilst simultaneously having no avenue for my own issues to really be discussed. I started to move back into a depressive state for a while but eventually managed to claw my way out. This wasn’t for long however, I then plunged into anhedonia. I no longer felt any real pleasure from anything that had once made me feel happy or content. Weirdly, the song “Suicide is Painless” began to sound like a taunt. When you can’t really feel anything, what can you do? The only thing that I found to help was meeting up and really talking with someone.</p>
+        <p>And that is what is at the heart of the problem. The reason why suicide and depression are such common issues is because many people are either uncomfortable talking about their problems or don’t have anyone to talk about them with. The only way around it is to actually engage with people who are struggling. There are those who are lucky enough to have people around them who can help. Their friends and relatives can be a source of comfort and sometimes just a sympathetic ear to try to ease the burden of these anxieties. Often though, it isn’t obvious from conversations with people that you can necessarily tell that they need help. It’s often knowing the context and asking the right questions that can help you to figure this out. Other times, the problem is that people with isolate themselves away and that is something that needs to be overcome by similar means. It’s only by organising with each other that we can really help each other out. If we leave each other to our own devices, sometimes that can lead to people’s negativities taking over and then a self-imposed loneliness creeps in.</p>   
+        <hr style="width: 728px;">
+
+    <div id="myMenu" class="menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="menu">
+            <ul id="menu-items">
+                <li class="menu-item"><a href="https://www.wamsicks.uk">Home</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/about.html">About</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/blog.html">Blog</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/oldprojects.html">Old Projects</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/contact.html">Contact Me</a></li>
+            </ul>
+            <div id="menu-background-pattern"></div>
+            <div id="menu-background-image"></div>
+        </div>
+    </div>
+
+    <script>
+        const menu = document.getElementById("menu");
+
+        Array.from(document.getElementsByClassName("menu-item")).forEach((item, index) => {
+            item.onmouseover = () => {
+                menu.dataset.activeIndex = index;
+            };
+        });
+
+        function openNav() {
+            document.getElementById("myMenu").style.width = "50%";
+        }
+
+        function closeNav() {
+            document.getElementById("myMenu").style.width = "0";
+        }
+    </script>
+</body>
+</html>
