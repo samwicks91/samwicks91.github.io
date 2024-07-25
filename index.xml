@@ -4,7 +4,7 @@
     <title>Wamsicks</title>
     <link>https://www.wamsicks.uk</link>
 <head>
-    <link rel="icon" href="https://www.wamsicks.uk/favicon.png" type="image/png">
+    <link rel="icon" href="https://www.wamsicks.uk/favicon.png" type="image/png"></link>
     <title>Wamsicks</title>
 </head>
     <atom:link href="https://www.wamsicks.uk/index.xml" rel="self" type="application/rss+xml"/>
