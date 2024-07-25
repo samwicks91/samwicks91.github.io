@@ -3,11 +3,10 @@
 <channel>
     <title>Wamsicks</title>
     <link>https://www.wamsicks.uk</link>
-    <image>
-    <url>https://www.wamsicks.uk/favicon.png</url>
+<head>
+    <link rel="icon" href="https://www.wamsicks.uk/favicon.png" type="image/png">
     <title>Wamsicks</title>
-    <link>https://www.wamsicks.uk</link>
-    </image>
+</head>
     <atom:link href="https://www.wamsicks.uk/index.xml" rel="self" type="application/rss+xml"/>
     <description>Wamsicks Blog Posts</description>
     <language>en-GB</language>
