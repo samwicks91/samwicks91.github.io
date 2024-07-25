@@ -10,7 +10,6 @@
     <image>
         <url>https://www.wamsicks.uk/favicon.png</url>
         <title>Wamsicks</title>
-        <link>https://www.wamsicks.uk</link>
     </image>
     <atom:link href="https://www.wamsicks.uk/index.xml" rel="self" type="application/rss+xml"/>
     <icon>
