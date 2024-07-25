@@ -139,6 +139,28 @@
         #post-items:hover > .post-item:hover {
             opacity: 1;
         }
+        .rss a {
+            text-decoration: none;
+            color: white;
+        }
+        #rss-items {
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+        .rss-link {
+            display: block;
+            font-size: 30px;
+            margin-bottom: 3px; 
+			margin-top: 10px;
+            opacity: 400ms ease;
+        }
+        #rss-items:hover > .rss-link {
+            opacity: 0.6;
+        }
+        #rss-items:hover > .rss-link:hover {
+            opacity: 0.3;
+        }
 		h1 { font-size: 3em; color: #ffffff; margin-bottom: 3px; margin-top: 10px; }
 		h1 .small { font-size: 0.4em; }
 		h1 a { text-decoration: none }
@@ -151,6 +173,12 @@
 </head>
 <body>
     
+    <div id="myRSS" class="rss">
+        <ul id="rss-items">
+            <li class="rss-link"><a href="https://www.wamsicks.uk/index.xml">RSS</a></li>
+        </ul>
+    </div>
+
 <div id="right_column"></div>
 <div id="container">
     <hr style="width: 728px;">	
