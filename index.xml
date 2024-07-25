@@ -14,15 +14,15 @@
     </image>
     <atom:link href="https://www.wamsicks.uk/index.xml" rel="self" type="application/rss+xml"/>
     <icon>
-        <url>https://www.wamsicks.uk/favicon16.ico</url>
+        <url>https://www.wamsicks.uk/favicon16.png</url>
         <size>16x16</size>
     </icon>
     <icon>
-        <url>https://www.wamsicks.uk/favicon32.ico</url>
+        <url>https://www.wamsicks.uk/favicon32.png</url>
         <size>32x32</size>
     </icon>
     <icon>
-        <url>https://www.wamsicks.uk/favicon48.ico</url>
+        <url>https://www.wamsicks.uk/favicon48.png</url>
         <size>48x48</size>
     </icon>
     
