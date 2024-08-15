@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Wamsicks | Blog">
+    <meta name="description" content="Old Blog Posts">
     <meta name="author" content="Samuel Wicks">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wamsicks | Blog</title>
+    <title>Wamsicks | Old Blogs</title>
     <style>
         body {
             height: 100vh;
@@ -27,12 +27,12 @@
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 0;
-            font-family: "Corbel Light", sans-serif;
+            font-family: sans-serif;
         }
         .menu a {
             padding: 8px 8px 8px 32px;
             text-decoration: none;
-            font-size: 36px;
+            font-size: 25px;
             color: #818181;
             display: block;
             transition: 0.3s;
@@ -101,6 +101,36 @@
         #menu-items:hover > .menu-item:hover {
             opacity: 1;
         }
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white; 
+		}	
+		#container {
+			margin: 0 auto;
+			width: 730px;
+			overflow: auto;
+        }	
+		.post a {
+			text-decoration: none;
+            color: white;
+		}
+        #post-items {
+            position: relative;		
+        }		
+        .post-item {
+            display: block;
+            font-size: clamp(1rem, 3vw, 3rem);
+			margin-bottom: 3px; 
+			margin-top: 10px;
+            opacity: 400ms ease;
+        }
+        #post-items:hover > .post-item {
+            opacity: 0.3;
+        }
+        #post-items:hover > .post-item:hover {
+            opacity: 1;
+        }
         .bar-container {
             position: relative;
             top: 0;
@@ -122,38 +152,18 @@
         .bar-link:hover {
             opacity: 0.3;
         }
-	.post a {
-	text-decoration: none;
-	color: white;
-	}
-        #post-items {
-            position: relative;		
-        }		
-        .post-item {
-        display: block;
-        font-size: clamp(1rem, 3vw, 3rem);
-	margin-bottom: 3px; 
-	margin-top: 10px;
-        opacity: 400ms ease;
-        }
-        #post-items:hover > .post-item {
-            opacity: 0.3;
-        }
-        #post-items:hover > .post-item:hover {
-            opacity: 1;
-        }
-	h1 { font-size: 3em; color: #ffffff; margin-bottom: 3px; margin-top: 10px; }
-	h1 .small { font-size: 0.4em; }
-	h1 a { text-decoration: none }
-	h2 { color: #efe7e7; }
+		h1 { font-size: 3em; color: #ffffff; margin-bottom: 3px; margin-top: 10px; }
+		h1 .small { font-size: 0.4em; }
+		h1 a { text-decoration: none }
+		h2 { color: #efe7e7; }
         h3 { color: #efe7e7; }
         h4 { color: #efe7e7; }
         p { color: #ffffff; }
     </style>
-	<div class="bar-container">
-        	<span class="bar-icon" onclick="openNav()">&#9776;</span>
-        	<a href="https://www.wamsicks.uk/index.xml" class="bar-link">RSS</a>
-    	</div>
+        <div class="bar-container">
+            <span class="bar-icon" onclick="openNav()">&#9776;</span>
+                <a href="https://www.wamsicks.uk/index.xml" class="bar-link">RSS</a>
+        </div>
 </head>
 <body>
 
@@ -166,7 +176,7 @@
 
 <div id="myPosts" class="post">
     <ul id="post-items">
-        <li class="post-item"><a href="https://www.wamsicks.uk/blog_old.html">Pre-2024</a></li>
+        <li class="post-item"><a href="https://www.wamsicks.uk/blog_old.html">The Old Shit</a></li>
     </ul>
 </div>
 <hr style="width: 728px;">
