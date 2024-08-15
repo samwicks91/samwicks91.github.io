@@ -101,37 +101,34 @@
         #menu-items:hover > .menu-item:hover {
             opacity: 1;
         }
-        .menu-icon {
-            font-size: 30px;
-            cursor: pointer;
-            color: white; 
-		}	
-		#right_column {
-			float: right;
-			margin: 0 auto;
-			margin-top: 10px;
-			margin-right: 10px;
-			width: 250px;
-			font-size: 0.8em;
-		}
-		#container {
-			margin: 0 auto;
-			width: 730px;
-			overflow: auto;
-        }	
-		.post a {
-			text-decoration: none;
-            color: white;
-		}
+        .bar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+        .bar-icon {
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+        }
+        .bar-link {
+        font-size: 16px;
+        color: white;
+        text-decoration: none;
+        }
+	.post a {
+	text-decoration: none;
+	color: white;
+	}
         #post-items {
             position: relative;		
         }		
         .post-item {
-            display: block;
-            font-size: clamp(1rem, 3vw, 3rem);
-			margin-bottom: 3px; 
-			margin-top: 10px;
-            opacity: 400ms ease;
+        display: block;
+        font-size: clamp(1rem, 3vw, 3rem);
+	margin-bottom: 3px; 
+	margin-top: 10px;
+        opacity: 400ms ease;
         }
         #post-items:hover > .post-item {
             opacity: 0.3;
@@ -139,46 +136,21 @@
         #post-items:hover > .post-item:hover {
             opacity: 1;
         }
-        .rss a {
-            text-decoration: none;
-            color: white;
-        }
-        #rss-items {
-            position: fixed;
-            top: 0;
-            right: 0;
-        }
-        .rss-link {
-            display: block;
-            font-size: 30px;
-            margin-bottom: 3px; 
-			margin-top: 10px;
-            opacity: 400ms ease;
-        }
-        #rss-items:hover > .rss-link {
-            opacity: 0.6;
-        }
-        #rss-items:hover > .rss-link:hover {
-            opacity: 0.3;
-        }
-		h1 { font-size: 3em; color: #ffffff; margin-bottom: 3px; margin-top: 10px; }
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none }
-		h2 { color: #efe7e7; }
+	h1 { font-size: 3em; color: #ffffff; margin-bottom: 3px; margin-top: 10px; }
+	h1 .small { font-size: 0.4em; }
+	h1 a { text-decoration: none }
+	h2 { color: #efe7e7; }
         h3 { color: #efe7e7; }
         h4 { color: #efe7e7; }
         p { color: #ffffff; }
     </style>
-	 <span class="menu-icon" onclick="openNav()">&#9776;</span>
+	<div class="bar-container">
+        	<span class="bar-icon" onclick="openNav()">&#9776;</span>
+        	<a href="https://www.wamsicks.uk/index.xml" class="bar-link">RSS</a>
+    	</div>
 </head>
 <body>
     
-    <div id="myRSS" class="rss">
-        <ul id="rss-items">
-            <li class="rss-link"><a href="https://www.wamsicks.uk/index.xml">RSS</a></li>
-        </ul>
-    </div>
-
 <div id="right_column"></div>
 <div id="container">
     <hr style="width: 728px;">	
