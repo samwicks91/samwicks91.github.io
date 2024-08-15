@@ -121,6 +121,24 @@
             cursor: pointer;
             color: white;
         }
+        .bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bar-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+        .bar-link {
+            font-size: 30px;
+            color: white;
+            text-decoration: none;
+        }
+        .bar-link:hover {
+            opacity: 0.3;
+        }
     </style>
 </head>
 <body>
@@ -148,7 +166,10 @@
         </div>
     </div>
 
-    <span class="menu-icon" onclick="openNav()">&#9776;</span>
+    <div class="bar-container">
+        <span class="bar-icon" onclick="openNav()">&#9776;</span>
+        <a href="https://www.wamsicks.uk/index.xml" class="bar-link">RSS</a>
+    </div>
 
     <script>
         const track = document.getElementById("image-track");
