@@ -145,10 +145,31 @@
         #post-items:hover > .post-item:hover {
             opacity: 1;
         }
-                h1 { font-size: 3em; color: #ffffff; margin-bottom: 3px; margin-top: 10px; }
-                h1 .small { font-size: 0.4em; }
-                h1 a { text-decoration: none }
-                h2 { color: #efe7e7; }
-        h3 { color: #efe7e7; }
-        h4 { color: #efe7e7; }
-        p { color: #ffffff; }
+        .bar-container {
+            position: relative;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bar-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+        .bar-link {
+            font-size: 30px;
+            color: white;
+            text-decoration: none;
+            opacity: 400ms ease;
+        }
+        .bar-link:hover {
+            opacity: 0.3;
+        }
+            h1 { font-size: 3em; color: #ffffff; margin-bottom: 3px; margin-top: 10px; }
+            h1 .small { font-size: 0.4em; }
+            h1 a { text-decoration: none }
+            h2 { color: #efe7e7; }
+            h3 { color: #efe7e7; }
+            h4 { color: #efe7e7; }
+            p { color: #ffffff; }
