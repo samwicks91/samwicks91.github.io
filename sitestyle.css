@@ -36,9 +36,9 @@
             font-family: "Corbel Light", sans-serif;
         }
         .menu a {
-            padding: 0.5em 0.5em 0.5em 2em;
+            padding: 8px 8px 8px 32px;
             text-decoration: none;
-            font-size: 2.25em;
+            font-size: 36px;
             color: #818181;
             display: block;
             transition: 0.3s;
@@ -48,9 +48,9 @@
         }
         .menu .closebtn {
             position: absolute;
-            top: 1.25em; 
-            right: 1.5em;
-            font-size: 2.25em;
+            top: 20px; 
+            right: 25px;
+            font-size: 36px;
             z-index: 11; 
             cursor: pointer;
         }
@@ -113,30 +113,31 @@
             color: white; 
         }        
         #right_column {
-                float: right;
-                margin: 0 auto;
-                margin-top: 10px;
-                margin-right: 10px;
-                width: 250px;
-                font-size: 0.8em;
+            float: right;
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-right: 10px;
+            width: 250px;
+            font-size: 0.8em;
         }
         #container {
-                margin: 0 auto;
-                width: 80vw;
-                overflow: auto;
-                    }        
+            margin: 0 auto;
+            width: 80vw;
+            max-width: 768px;
+            overflow: auto;
+        }        
         .post a {
-                text-decoration: none;
-                color: white;
-                }
+            text-decoration: none;
+            color: white;
+        }
         #post-items {
             position: relative;                
         }                
         .post-item {
             display: block;
             font-size: clamp(1rem, 3vw, 3rem);
-                        margin-bottom: 3px; 
-                        margin-top: 10px;
+            margin-bottom: 3px; 
+            margin-top: 10px;
             opacity: 400ms ease;
         }
         #post-items:hover > .post-item {
