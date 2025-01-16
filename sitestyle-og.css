@@ -36,9 +36,9 @@
             font-family: "Corbel Light", sans-serif;
         }
         .menu a {
-            padding: 0.5em 0.5em 0.5em 2em;
+            padding: 8px 8px 8px 32px;
             text-decoration: none;
-            font-size: 2.25em;
+            font-size: 36px;
             color: #818181;
             display: block;
             transition: 0.3s;
@@ -48,9 +48,9 @@
         }
         .menu .closebtn {
             position: absolute;
-            top: 1.25em; 
-            right: 1.5em;
-            font-size: 2.25em;
+            top: 20px; 
+            right: 25px;
+            font-size: 36px;
             z-index: 11; 
             cursor: pointer;
         }
@@ -108,10 +108,10 @@
             opacity: 1;
         }
         .menu-icon {
-            font-size: 2em ;
+            font-size: 30px;
             cursor: pointer;
             color: white; 
-        }        
+                }        
         #right_column {
                 float: right;
                 margin: 0 auto;
@@ -151,14 +151,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            @media only screen and (max-width: 600px) {
+            width: 578px;
+                }
         }
         .bar-icon {
-            font-size: 2em;
+            font-size: 30px;
             cursor: pointer;
             color: white;
         }
         .bar-link {
-            font-size: 2em;
+            font-size: 30px;
             color: white;
             text-decoration: none;
             opacity: 400ms ease;
