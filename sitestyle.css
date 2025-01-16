@@ -32,6 +32,9 @@
             background-color: #111;
             overflow-x: hidden;
             transition: 0.5s;
+            @media only screen and (max-width: 768px) {
+            transition: 1s;
+                }
             padding-top: 0;
             font-family: "Corbel Light", sans-serif;
         }
@@ -124,11 +127,11 @@
                         margin: 0 auto;
                         width: 730px;
                         overflow: auto;
-        }        
+                           }        
                 .post a {
                         text-decoration: none;
-            color: white;
-                }
+                        color: white;
+                        }
         #post-items {
             position: relative;                
         }                
@@ -151,6 +154,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            @media only screen and (max-width: 768px) {
+            width: 750px;
+                }
         }
         .bar-icon {
             font-size: 30px;
@@ -165,12 +171,6 @@
         }
         .bar-link:hover {
             opacity: 0.3;
-        }
-	div.leftrev {
-	text-align: left;
-        }
-	div.rightrev {
-	text-align: right;
         }
             h1 { font-size: 3em; color: #ffffff; margin-bottom: 3px; margin-top: 10px; }
             h1 .small { font-size: 0.4em; }
