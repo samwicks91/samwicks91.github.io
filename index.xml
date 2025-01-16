@@ -9,7 +9,6 @@
     <ttl>30</ttl>
     <image>
         <url>https://www.wamsicks.uk/favicon.ico</url>
-        <title>Wamsicks</title>
     </image>
     <atom:link href="https://www.wamsicks.uk/index.xml" rel="self" type="application/rss+xml"/>
     <icon>
