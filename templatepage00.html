@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Wamsicks | DO NOT LOOK AT ME">
+    <meta name="author" content="Samuel Wicks">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wamsicks | LEAVE IMMEDIATELY</title>
+    <link rel="stylesheet" href="sitestyle.css">
+	 <span class="menu-icon" onclick="openNav()">&#9776;</span>
+</head>
+<body>
+    
+<div id="right_column"></div>
+<div id="container">
+    <hr style="width: 42vw;">	
+
+
+    <div id="myMenu" class="menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="menu">
+            <ul id="menu-items">
+                <li class="menu-item"><a href="https://www.wamsicks.uk">Home</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/about.html">About</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/blog.html">Blog</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/oldprojects.html">Portfolio</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/contact.html">Contact Me</a></li>
+            </ul>
+            <div id="menu-background-pattern"></div>
+            <div id="menu-background-image"></div>
+        </div>
+    </div>
+
+    <script>
+        const menu = document.getElementById("menu");
+
+        Array.from(document.getElementsByClassName("menu-item")).forEach((item, index) => {
+            item.onmouseover = () => {
+                menu.dataset.activeIndex = index;
+            };
+        });
+
+        function openNav() {
+			document.getElementById("myMenu").style.width = "90%";
+            document.getElementById("myMenu").style.maxWidth = "768px";
+        }
+
+        function closeNav() {
+            document.getElementById("myMenu").style.width = "0";
+        }
+    </script>
+</body>
+</html>

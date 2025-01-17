@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Wamsicks | Mr Pentland Checklist">
+    <meta name="author" content="Samuel Wicks">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wamsicks | Mr Pentland Checklist</title>
+    <link rel="stylesheet" href="sitestyle.css">
+	 <span class="menu-icon" onclick="openNav()">&#9776;</span>
+</head>
+<body>
+    
+<div id="right_column"></div>
+<div id="container">
+    <hr style="width: 42vw;">	
+        <h1>Mr Pentland Club Bluesky Checklist</h1>
+        <h3>Hi Gaizka, I thought I would create a small list here of different ideas we can run through</h3>
+	    <h3>Last updated 17th January 2025</h3>
+    <hr style="width: 42vw;">
+        <h3>Posts</h3>
+        <p>Posts essentially work the exact same way that they do with Twitter/X except that "going viral" does not happen in the same way. This is due to the lack of algorithms pushing content to users in the same way that most other social internet sites do. The only place that this really takes place is in the discover feed but I am unsure as to how many people actually use it.</p>
+        <h3>Feeds</h3>
+        <p>Unlike most of the other sites that Bluesky is competing with, there is a way of utilising user-generated algorithms via feeds. Essentially a feed is a simple algorithm that uses a series of filters to show posts for a dedicated purpose. I have created two so far that are doing fairly well and I will link them below under reference. The one feed that <i>Mr Pentland Club</i> is currently using (unintentionally) is called "Athletic Club de Bilbao" but we may be able to find the algorithm for a feed encompassing all Primera División clubs and grow our reach that way.</p>
+        <h3>Lists</h3>
+        <p>Lists are exactly what they sound like, lists of users. Every list has a purpose which has to be coded to it before it can be launched, these purposes are "curatelist" and "modlist". As I'm sure you have worked out by now, the curated list option is for positive uses like driving feeds and moderation lists are for blocking and muting users. Curated lists are best used in conjunction with feeds as they provide an easy way of pushing multiple users posts into a single feed efficiently via a set algorithm.</p>
+        <h3>Starter Packs</h3>
+        <p>As Bluesky is still a young social networking site, people tend to join but are unsure of who to follow when they do so. Bluesky created Starter Packs as a way of creating a list of users that follow a specific logic that new users can peruse and follow. If you look at the link below, you can see that starter packs tend to be for "Podcasters" or "Journalists" but it may be worth creating one for Athletic Club supporters at some point with <i>Mr Pentland Club</i> at the top with any other clubs or Peñas so drive engagement.</p>
+        <p>This is a brief overview so far but I am happy to go through this in greater detail when I have more time, this week has been particularly difficult for a number of reasons.</p>
+    <hr style="width: 42vw;">
+        <h3>Reference</h3>
+    <div id="myPosts" class="post">
+        <ul id="post-items">
+            <li class="post-item"><a href="https://bsky.app/profile/jorgekaplan.bsky.social/feed/aaae7o4d5h3ce">Athletic Club de Bilbao Feed</a></li>
+            <li class="post-item"><a href="https://bsky.app/profile/wamsicks.uk/feed/aaaaouxs3saau">Calcio Italiano Feed</a></li>
+            <li class="post-item"><a href="https://bsky.app/profile/wamsicks.uk/feed/aaaaruifiut5q">Rugby Union Feed</a></li>
+            <li class="post-item"><a href="https://blueskystarterpack.com/">Bluesky Starter Packs</a></li>
+        </ul>
+    </div>
+    <hr style="width: 42vw;">
+
+    <div id="myMenu" class="menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="menu">
+            <ul id="menu-items">
+                <li class="menu-item"><a href="https://www.wamsicks.uk">Home</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/about.html">About</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/blog.html">Blog</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/oldprojects.html">Portfolio</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/contact.html">Contact Me</a></li>
+            </ul>
+            <div id="menu-background-pattern"></div>
+            <div id="menu-background-image"></div>
+        </div>
+    </div>
+
+    <script>
+        const menu = document.getElementById("menu");
+
+        Array.from(document.getElementsByClassName("menu-item")).forEach((item, index) => {
+            item.onmouseover = () => {
+                menu.dataset.activeIndex = index;
+            };
+        });
+
+        function openNav() {
+			document.getElementById("myMenu").style.width = "90%";
+            document.getElementById("myMenu").style.maxWidth = "768px";
+        }
+
+        function closeNav() {
+            document.getElementById("myMenu").style.width = "0";
+        }
+    </script>
+</body>
+</html>
