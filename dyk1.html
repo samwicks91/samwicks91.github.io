@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Wamsicks · Did You Know?">
+    <meta name="author" content="Samuel Wicks">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wamsicks · Did You Know?</title>
+    <link rel="stylesheet" href="sitestyle.css">
+	 <span class="menu-icon" onclick="openNav()">&#9776;</span>
+</head>
+<body>
+    
+<div id="right_column"></div>
+<div id="container">
+    <hr style="width: 42vw;">	
+        <h1>Did You Know</h1>
+        <h3>that The General Picassos EP, <i>Crave</i> is lost media?</h3>
+        <h3>Seriously, I had digital and physical copies and I'm managed to lose them all. The few other people who I know worked on the project or bought/downloaded the album no longer have a copy either.</h3>
+        <h3>Not that I mind much. I seriously think that it's a 1/10 piece of work. Seriously, the one track I stand by is really bad noise rock and the other four tracks are derivative of slowcore without any lyrics. Yawn.</h3>
+
+    <div id="myMenu" class="menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="menu">
+            <ul id="menu-items">
+                <li class="menu-item"><a href="https://www.wamsicks.uk">Home</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/about.html">About</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/blog.html">Blog</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/oldprojects.html">Portfolio</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/contact.html">Contact Me</a></li>
+            </ul>
+            <div id="menu-background-pattern"></div>
+            <div id="menu-background-image"></div>
+        </div>
+    </div>
+
+    <script>
+        const menu = document.getElementById("menu");
+
+        Array.from(document.getElementsByClassName("menu-item")).forEach((item, index) => {
+            item.onmouseover = () => {
+                menu.dataset.activeIndex = index;
+            };
+        });
+
+        function openNav() {
+			document.getElementById("myMenu").style.width = "90%";
+            document.getElementById("myMenu").style.maxWidth = "768px";
+        }
+
+        function closeNav() {
+            document.getElementById("myMenu").style.width = "0";
+        }
+    </script>
+</body>
+</html>
