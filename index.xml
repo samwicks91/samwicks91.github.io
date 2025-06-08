@@ -7,20 +7,21 @@
     <language>en-GB</language>
     <lastBuildDate>Sun, 08 Jun 2025 16:46:00 +0000</lastBuildDate>
     <ttl>30</ttl>
-    
+
     <image>
         <url>https://www.wamsicks.uk/favicon.ico</url>
         <title>Wamsicks</title>
         <link>https://www.wamsicks.uk</link>
     </image>
+
     <atom:link href="https://www.wamsicks.uk/index.xml" rel="self" type="application/rss+xml"/>
 
     <item>
         <title>Did You Know?: I Lost an EP</title>
         <link>https://www.wamsicks.uk/dyk1.html</link>
-        <description>
+        <description><![CDATA[
         Made some songs, they were bad, now they're lost to the world. Yay!
-        </description>
+        ]]></description>
         <pubDate>Sun, 08 Jun 2025 16:46:00 +0000</pubDate>
         <guid>https://www.wamsicks.uk/dyk1.html</guid>
     </item>
@@ -28,9 +29,9 @@
     <item>
         <title>Suede Playlist for Nadine</title>
         <link>https://www.wamsicks.uk/for-nadine.html</link>
-        <description>
+        <description><![CDATA[
         Just wanted to show you why I enjoy them so much, Nadine
-        </description>
+        ]]></description>
         <pubDate>Thu, 16 Jan 2025 12:00:00 +0000</pubDate>
         <guid>https://www.wamsicks.uk/for-nadine.html</guid>
     </item>
@@ -38,9 +39,9 @@
     <item>
         <title>A Punch</title>
         <link>https://www.wamsicks.uk/a_punch.html</link>
-        <description>
+        <description><![CDATA[
         Returning to the scene of the crime
-        </description>
+        ]]></description>
         <pubDate>Mon, 15 Jun 2020 12:12:00 +0000</pubDate>
         <guid>https://www.wamsicks.uk/a_punch.html</guid>
     </item>
@@ -48,49 +49,51 @@
     <item>
         <title>What's it all about?</title>
         <link>https://www.wamsicks.uk/wiaa.html</link>
-        <description>
+        <description><![CDATA[
         I don't know, don't ask me
-        </description>
+        ]]></description>
         <pubDate>Mon, 06 Jan 2020 11:27:00 +0000</pubDate>
         <guid>https://www.wamsicks.uk/wiaa.html</guid>
     </item>
 
-        <item>
+    <item>
         <title>Tears of Suburbia</title>
         <link>https://www.wamsicks.uk/suede1.html</link>
-        <description>
+        <description><![CDATA[
         A love letter to Suede
-        </description>
+        ]]></description>
         <pubDate>Sat, 27 Apr 2019 23:30:00 +0000</pubDate>
         <guid>https://www.wamsicks.uk/suede1.html</guid>
     </item>
 
-        <item>
+    <item>
         <title>Me and My Mind</title>
         <link>https://www.wamsicks.uk/my_mind.html</link>
-        <description>
+        <description><![CDATA[
         I wonder what was on my mind that day
-        </description>
+        ]]></description>
         <pubDate>Sat, 02 Mar 2019 20:57:00 +0000</pubDate>
         <guid>https://www.wamsicks.uk/my_mind.html</guid>
     </item>
 
-        <item>
+    <item>
         <title>Therapy?</title>
         <link>https://www.wamsicks.uk/therapy1.html</link>
-        <description>
+        <description><![CDATA[
         <h3>Well therapy before I actually first had proper therapy anyway</h3>
-        </description>
+        ]]></description>
         <pubDate>Sat, 02 Mar 2019 17:30:00 +0000</pubDate>
         <guid>https://www.wamsicks.uk/therapy1.html</guid>
     </item>
 
-        <item>
+    <item>
         <title>Critiquing Ideology. Challenging Rules.</title>
         <link>https://www.wamsicks.uk/cicr.html</link>
-        <description>
+        <description><![CDATA[
         My first proper post. Don't say I didn't warn you.
-        </description>
+        ]]></description>
         <pubDate>Fri, 01 Mar 2019 17:30:00 +0000</pubDate>
         <guid>https://www.wamsicks.uk/cicr.html</guid>
     </item>
+</channel>
+</rss>
