@@ -5,24 +5,15 @@
     <link>https://www.wamsicks.uk</link>
     <description>Wamsicks Blog Posts</description>
     <language>en-GB</language>
-    <lastBuildDate>Sun, 08 Jun 2025 16:46:00 +0000/lastBuildDate>
+    <lastBuildDate>Sun, 08 Jun 2025 16:46:00 +0000</lastBuildDate>
     <ttl>30</ttl>
+    
     <image>
         <url>https://www.wamsicks.uk/favicon.ico</url>
+        <title>Wamsicks</title>
+        <link>https://www.wamsicks.uk</link>
     </image>
     <atom:link href="https://www.wamsicks.uk/index.xml" rel="self" type="application/rss+xml"/>
-    <icon>
-        <url>https://www.wamsicks.uk/favicon16.png</url>
-        <size>16x16</size>
-    </icon>
-    <icon>
-        <url>https://www.wamsicks.uk/favicon32.png</url>
-        <size>32x32</size>
-    </icon>
-    <icon>
-        <url>https://www.wamsicks.uk/favicon48.png</url>
-        <size>48x48</size>
-    </icon>
 
     <item>
         <title>Did You Know?: I Lost an EP</title>
