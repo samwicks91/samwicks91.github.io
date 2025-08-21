@@ -1,3 +1,4 @@
+    @import url(https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap);
         body {
             height: 100vh;
             width: 100vw;
@@ -6,7 +7,9 @@
             padding: 0;
             overflow-x: hidden;
             overflow-y: scroll;
-            font-family: Helvetica,Arial,freesans,sans-serif;
+            font-family: "Roboto Slab", serif;
+            font-weight: 300;
+            font-style: normal;
         }
         #image-track {
             display: flex;
