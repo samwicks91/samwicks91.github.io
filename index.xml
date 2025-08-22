@@ -5,7 +5,7 @@
     <link>https://www.wamsicks.uk</link>
     <description>Wamsicks Blog Posts</description>
     <language>en-GB</language>
-    <lastBuildDate>Sun, 08 Jun 2025 16:46:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Aug 2025 19:00:00 +0000</lastBuildDate>
     <ttl>30</ttl>
 
     <image>
@@ -15,6 +15,16 @@
     </image>
 
     <atom:link href="https://www.wamsicks.uk/index.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+        <title>Pi-Hole on Proxmox</title>
+        <link>https://www.wamsicks.uk/lxc_pihole.html</link>
+        <description><![CDATA[
+        Having access to a DNS Server and Ad Blocking on the cheap can make websurfing safer
+        ]]></description>
+        <pubDate>Fri, 22 Aug 2025 19:00:00 +0000</pubDate>
+        <guid>https://www.wamsicks.uk/lxc_pihole.html</guid>
+    </item>
 
     <item>
         <title>Did You Know?: I Lost an EP</title>
