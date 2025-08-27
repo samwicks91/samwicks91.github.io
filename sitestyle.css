@@ -16,7 +16,7 @@
             width:100%
         }
         a:visited {
-        color: rgb(172, 205, 199);
+            color: rgb(172, 205, 199);
         }
         #image-track {
             display: flex;
