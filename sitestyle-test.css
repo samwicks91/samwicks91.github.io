@@ -136,7 +136,7 @@
         #container {
             margin: 0 auto;
             width: 100vw;
-            max-width: 60rem;
+            max-width: 50vw;
             overflow: auto;
         }        
         .post a {
