@@ -11,6 +11,7 @@
             font-family: "Roboto Slab", serif;
             font-weight: 300;
             font-style: normal;
+            color: #f1f1f1;
         }
         img {
             width:100%
@@ -235,3 +236,4 @@
             h5 { color: #efe7e7; }
             h6 { color: #efe7e7; }
             p { color: #ffffff; }
+            body { color: #ffffff; }
