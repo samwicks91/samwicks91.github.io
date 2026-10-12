@@ -5,7 +5,7 @@
     <link>https://www.wamsicks.uk</link>
     <description>Wamsicks Blog Posts</description>
     <language>en-GB</language>
-    <lastBuildDate>Fri, 22 Aug 2025 19:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 18:00:00 +0000</lastBuildDate>
     <ttl>30</ttl>
 
     <image>
@@ -15,6 +15,16 @@
     </image>
 
     <atom:link href="https://www.wamsicks.uk/index.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+        <title>Therapy? Pt.2</title>
+        <link>https://www.wamsicks.uk/therapy2.html</link>
+        <description><![CDATA[
+        Given everything that happened last year, I write this with a feeling of positivity about what the rest of 2026 and 2027 will look like.
+        ]]></description>
+        <pubDate>Tue, 13 Oct 2026 18:00:00 +0000</pubDate>
+        <guid>https://www.wamsicks.uk/therapy2.html</guid>
+    </item>
 
     <item>
         <title>Pi-Hole on Proxmox</title>
@@ -37,13 +47,13 @@
     </item>
     
     <item>
-        <title>Suede Playlist for Nadine</title>
-        <link>https://www.wamsicks.uk/for-nadine.html</link>
+        <title>Suede Playlist</title>
+        <link>https://www.wamsicks.uk/25suede.html</link>
         <description><![CDATA[
-        Just wanted to show you why I enjoy them so much, Nadine
+        Just wanted to show you why I enjoy them so much
         ]]></description>
         <pubDate>Thu, 16 Jan 2025 12:00:00 +0000</pubDate>
-        <guid>https://www.wamsicks.uk/for-nadine.html</guid>
+        <guid>https://www.wamsicks.uk/25suede.html</guid>
     </item>
 
     <item>

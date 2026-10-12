@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Blog Posts">
+    <meta name="author" content="Samuel Wicks">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wamsicks · Blog</title>
+    <link rel="stylesheet" href="sitestyle.css">
+        <div class="bar-container">
+            <span class="bar-icon" onclick="openNav()">&#9776;</span>
+                <a href="https://www.wamsicks.uk/index.xml" class="bar-link">RSS</a>
+        </div>
+</head>
+<body>
+
+<div id="container">
+    <hr style="width: 42vw;">	
+    <h1>Blog</h1>
+    <h3>I blog, very irregularly. This is probably a good thing right now.</h3>
+	<h3>Eventually I may post something about being in therapy right now. Enjoy, because I don't know when the next one is coming.</h3>
+<hr style="width: 42vw;">
+
+<div id="myPosts" class="post">
+    <ul id="post-items">
+        <li class="post-item"><a href="https://www.wamsicks.uk/blog.html">Back</a></li>
+        <li class="post-item"><a href="https://www.wamsicks.uk/therapy1.html">Therapy?</a></li>
+        <li class="post-item"><a href="https://www.wamsicks.uk/cicr.html">Critiquing Ideology. Challenging Rules.</a></li>
+    </ul>
+</div>
+<hr style="width: 42vw;">
+    <div id="myMenu" class="menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="menu">
+            <ul id="menu-items">
+                <li class="menu-item"><a href="https://www.wamsicks.uk">Home</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/about.html">About</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/blog.html">Blog</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/oldprojects.html">Portfolio</a></li>
+                <li class="menu-item"><a href="https://www.wamsicks.uk/contact.html">Contact Me</a></li>
+            </ul>
+            <div id="menu-background-pattern"></div>
+            <div id="menu-background-image"></div>
+        </div>
+    </div>
+
+    <script>
+        const menu = document.getElementById("menu");
+
+        Array.from(document.getElementsByClassName("menu-item")).forEach((item, index) => {
+            item.onmouseover = () => {
+                menu.dataset.activeIndex = index;
+            };
+        });
+
+        function openNav() {
+			document.getElementById("myMenu").style.width = "90%";
+            document.getElementById("myMenu").style.maxWidth = "768px";
+        }
+
+        function closeNav() {
+            document.getElementById("myMenu").style.width = "0";
+        }
+    </script>
+</body>
+</html>

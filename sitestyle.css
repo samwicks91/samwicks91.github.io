@@ -237,3 +237,79 @@
             h6 { color: #efe7e7; }
             p { color: #ffffff; }
             body { color: #ffffff; }
+
+/* Test */ 
+        @media (max-width: 1024px) {
+            #container {
+                max-width: 90%;
+                width: 90%;
+            }
+            #right_column {
+                float: none;
+                width: 100%;
+                margin: 1rem 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            body {
+                height: auto;
+                min-height: 100svh;
+                width: 100%;
+                overflow-y: auto;
+            }
+
+            #container {
+                max-width: 100%;
+                width: 100%;
+                padding: 0 1rem;
+            }
+
+            .bar-container {
+                padding: 0.5rem 1rem;
+                padding-top: max(0.5rem, env(safe-area-inset-top));
+            }
+            .bar-icon, .bar-link {
+                font-size: 1.75em;
+                padding: 0.5rem;
+            }
+
+            .menu a {
+                font-size: 24px;
+                padding: 12px 12px 12px 24px;
+            }
+            .menu .closebtn {
+                top: max(20px, env(safe-area-inset-top));
+                right: max(25px, env(safe-area-inset-right));
+                font-size: 32px;
+            }
+
+            #menu-items {
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
+            }
+            .menu-item {
+                font-size: clamp(2rem, 10vw, 3rem);
+            }
+
+            .post-item {
+                font-size: clamp(1.25rem, 6vw, 2rem);
+            }
+            .reflink-item {
+                font-size: clamp(1rem, 4vw, 1.5rem);
+            }
+
+            #image-track {
+                position: relative;
+                top: auto;
+                left: 0;
+                transform: none;
+                overflow-x: auto;
+                padding: 1rem;
+            }
+            #image-track > .image {
+                flex: 0 0 auto;
+                width: 70vmin;
+                height: 90vmin;
+            }
+        }
